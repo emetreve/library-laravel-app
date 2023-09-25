@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginUserRequest;
 use App\Http\Requests\SignupUserRequest;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Validation\ValidationException;
 
 
 class AuthController extends Controller
@@ -18,4 +20,16 @@ class AuthController extends Controller
 
         return redirect()->route('login.index')->with('success', 'You have successfully signed up. Please log in.');
 	}
+
+    public function login (LoginUserRequest $request): RedirectResponse
+    {
+        $credentials = $request->validated();
+
+		if (auth()->attempt($credentials))
+		{
+			return redirect(route('dashboard'));
+		}
+
+		return back()->withInput()->withErrors(['email' => "Wrong credentials."]);
+    }
 }

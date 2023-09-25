@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'auth.login')->middleware('guest')->name('login.index');
-
 Route::view('/signup', 'auth.signup')->middleware('guest')->name('signup.index');
 
 Route::controller(AuthController::class)->group(function () {
 	Route::post('/signup', 'signup')->middleware('guest')->name('signup');
+    Route::post('/', 'login')->middleware('guest')->name('login');
 });

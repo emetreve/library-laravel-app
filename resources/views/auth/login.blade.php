@@ -10,7 +10,8 @@
             Sign in to your account
         </h1>
     @endif
-    <form method="POST" action="" novalidate class="space-y-4 md:space-y-6">
+
+    <form method="POST" action="{{ route('login') }}" novalidate class="space-y-4 md:space-y-6">
 
         @csrf
 
