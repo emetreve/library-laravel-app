@@ -4,7 +4,18 @@
         @csrf
 
         <div>
-            <div class="mb-6">
+            <div class="mb-5">
+                <label for="email" class="block mb-2 text-sm font-medium text-white">Username</label>
+                <input type="text" name="username" id="username"
+                    class="border sm:text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-500 text-white"
+                    placeholder="username">
+                <div class="h-2 mt-1">
+                    @error('username')
+                        <p class="text-red-500 text-xs">{{ $message }}</p>
+                    @enderror
+                </div>
+            </div>
+            <div class="mb-5">
                 <label for="email" class="block mb-2 text-sm font-medium text-white">Email Address</label>
                 <input type="email" name="email" id="email"
                     class="border sm:text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-500 text-white"
@@ -21,6 +32,17 @@
                     class=" border sm:text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-500 text-white mb-2">
                 <div class="h-2 mt-1">
                     @error('password')
+                        <p class="text-red-500 text-xs">{{ $message }}</p>
+                    @enderror
+                </div>
+            </div>
+            <div class="mt-3">
+                <label for="password_confirmation" class="block mb-2 text-sm font-medium text-white">Confirm
+                    Password</label>
+                <input type="password" name="password_confirmation" id="password_confirmation" placeholder="••••••••"
+                    class=" border sm:text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-500 text-white mb-2">
+                <div class="h-2 mt-1">
+                    @error('password_confirmation')
                         <p class="text-red-500 text-xs">{{ $message }}</p>
                     @enderror
                 </div>
