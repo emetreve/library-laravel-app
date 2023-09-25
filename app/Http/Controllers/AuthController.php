@@ -16,6 +16,6 @@ class AuthController extends Controller
 
 		User::create($credentials);
 
-		return redirect(route('login.index'));
+        return redirect()->route('login.index')->with('success', 'You have successfully signed up. Please log in.');
 	}
 }
