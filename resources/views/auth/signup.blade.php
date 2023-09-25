@@ -1,16 +1,17 @@
 <x-user-input-layout>
 
-    <form method="POST" action="" novalidate class="space-y-4 md:space-y-6">
+    <form method="POST" action="{{ route('signup') }}" novalidate class="space-y-4 md:space-y-6">
+
         @csrf
 
         <div>
             <div class="mb-5">
                 <label for="email" class="block mb-2 text-sm font-medium text-white">Username</label>
-                <input type="text" name="username" id="username"
+                <input type="text" name="name" id="name"
                     class="border sm:text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-500 text-white"
-                    placeholder="username">
+                    placeholder="username" value="{{ old('name') }}">
                 <div class="h-2 mt-1">
-                    @error('username')
+                    @error('name')
                         <p class="text-red-500 text-xs">{{ $message }}</p>
                     @enderror
                 </div>
@@ -19,7 +20,7 @@
                 <label for="email" class="block mb-2 text-sm font-medium text-white">Email Address</label>
                 <input type="email" name="email" id="email"
                     class="border sm:text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-500 text-white"
-                    placeholder="example@gmail.com">
+                    placeholder="example@gmail.com" value="{{ old('email') }}">
                 <div class="h-2 mt-1">
                     @error('email')
                         <p class="text-red-500 text-xs">{{ $message }}</p>
