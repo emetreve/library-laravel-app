@@ -20,7 +20,8 @@
                 <label for="email" class="block mb-2 text-sm font-medium text-white">Email Address</label>
                 <input type="email" name="email" id="email"
                     class="border sm:text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-500 text-white"
-                    placeholder="example@gmail.com">
+                    placeholder="example@gmail.com"
+                    value="{{ old('email') }}">
                 <div class="h-2 mt-1">
                     @error('email')
                         <p class="text-red-500 text-xs">{{ $message }}</p>

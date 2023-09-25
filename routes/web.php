@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +22,5 @@ Route::controller(AuthController::class)->group(function () {
 	Route::post('/signup', 'signup')->middleware('guest')->name('signup');
     Route::post('/', 'login')->middleware('guest')->name('login');
 });
+
+Route::get('/dashboard', DashboardController::class)->middleware('auth')->name('dashboard');
