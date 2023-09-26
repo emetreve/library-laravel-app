@@ -2,10 +2,9 @@
 
 
     @if (session('success'))
-        <div
-            class="text-green-600 fixed mt-4 text-center text-xl font-bold leading-tight tracking-tight  md:text-2xl pb-6">
+        <h1 class="text-xl font-bold leading-tight tracking-tight  md:text-2xl text-green-600 pb-6">
             {{ session('success') }}
-        </div>
+        </h1>
     @else
         <h1 class="text-xl font-bold leading-tight tracking-tight  md:text-2xl text-white pb-6">
             Sign in to your account
