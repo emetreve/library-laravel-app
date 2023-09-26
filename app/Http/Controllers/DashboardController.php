@@ -11,7 +11,7 @@ class DashboardController extends Controller
     public function __invoke(): View
     {
         return view('admin.dashboard', [
-            'books' => Book::latest()->get(),
+            'books' => Book::latest()->with('authors')->get(),
 		]);
     }
 }
