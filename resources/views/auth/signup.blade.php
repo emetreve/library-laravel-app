@@ -53,6 +53,11 @@
                 class="w-full mt-6 text-white bg-gray-900 hover:bg-grayMain border border-gray-900 hover:border-gray-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                 Sign up</button>
 
+            <div class="flex justify-center mt-8 opacity-75 text-sm">
+                <p class="mr-2">Already have an account?</p>
+                <a href="{{ route('login') }}" class="text-blue-500">Log in</a>
+            </div>
+
         </div>
     </form>
 
