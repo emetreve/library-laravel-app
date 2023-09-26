@@ -2,7 +2,8 @@
 
 
     @if (session('success'))
-        <div class="text-green-600 text-xl font-bold leading-tight tracking-tight  md:text-2xl pb-6">
+        <div
+            class="text-green-600 fixed mt-4 text-center text-xl font-bold leading-tight tracking-tight  md:text-2xl pb-6">
             {{ session('success') }}
         </div>
     @else
@@ -20,8 +21,7 @@
                 <label for="email" class="block mb-2 text-sm font-medium text-white">Email Address</label>
                 <input type="email" name="email" id="email"
                     class="border sm:text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-500 text-white"
-                    placeholder="example@gmail.com"
-                    value="{{ old('email') }}">
+                    placeholder="example@gmail.com" value="{{ old('email') }}">
                 <div class="h-2 mt-1">
                     @error('email')
                         <p class="text-red-500 text-xs">{{ $message }}</p>

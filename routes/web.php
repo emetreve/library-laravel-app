@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,3 +25,7 @@ Route::controller(AuthController::class)->group(function () {
 });
 
 Route::get('/dashboard', DashboardController::class)->middleware('auth')->name('dashboard');
+
+Route::group(['controller' => BookController::class, 'middleware' => 'auth', 'prefix' => 'dashboard'], function () {
+	Route::delete('{book}', 'destroy')->name('books.destroy');
+});

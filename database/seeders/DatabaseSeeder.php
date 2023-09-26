@@ -21,6 +21,9 @@ class DatabaseSeeder extends Seeder
 
         foreach ($authors as $key => $author) {
             $author->books()->attach($books[$key]->id);
+            if ($key<3){
+                $author->books()->attach($books[$key+1]->id);
+            }
         }
     }
 }

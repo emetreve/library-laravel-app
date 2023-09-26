@@ -2,6 +2,17 @@
 
     <div class=" pt-12 container sm:px-8 bg-grayMain min-h-screen min-w-full">
         <div class="py-8 px-24">
+            @if (session('success'))
+                <div id="delete-book-success"
+                    class="text-green-500 w-full text-center fixed top-5 left-0 text-xl font-bold leading-tight tracking-tight md:text-2xl">
+                    {{ session('success') }}
+                </div>
+                <script>
+                    setTimeout(function() {
+                        document.getElementById('delete-book-success').style.display = 'none';
+                    }, 3000);
+                </script>
+            @endif
             <div>
                 <h2 class="text-2xl font-semibold leading-tight text-white">All Books</h2>
             </div>
@@ -31,7 +42,8 @@
                                         </p>
                                         <div class="mt-2">
                                             <a href="" class="text-blue-500">Edit</a>
-                                            <form method="POST" class="inline" novalidate action="">
+                                            <form method="POST" class="inline" novalidate
+                                                action="{{ route('books.destroy', $book->id) }}">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button class="ml-1 text-gray-500">Delete</button>
@@ -41,10 +53,10 @@
 
                                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-md">
                                         <div>
-                                            <div class="flex">
-                                                <p class="mr-2 text-gray-500">Written by:</p>
+                                            <div>
+                                                <p class="mr-2 text-gray-500 inline">Written by:</p>
                                                 @foreach ($book->authors as $author)
-                                                    <p class="mr-1">
+                                                    <p class="mr-1 inline">
                                                         {{ !$loop->last ? $author->name . ',' : $author->name }}</p>
                                                 @endforeach
                                             </div>
