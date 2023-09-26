@@ -28,4 +28,6 @@ Route::get('/dashboard', DashboardController::class)->middleware('auth')->name('
 
 Route::group(['controller' => BookController::class, 'middleware' => 'auth', 'prefix' => 'dashboard'], function () {
 	Route::delete('{book}', 'destroy')->name('books.destroy');
+    Route::get('create', 'create')->name('books.create');
+    Route::post('', 'store')->name('books.store');
 });

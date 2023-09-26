@@ -1,6 +1,5 @@
 <x-user-input-layout>
 
-
     @if (session('success'))
         <h1 class="text-xl font-bold leading-tight tracking-tight  md:text-2xl text-green-600 pb-6">
             {{ session('success') }}
@@ -49,4 +48,5 @@
 
         </div>
     </form>
+
 </x-user-input-layout>

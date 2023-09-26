@@ -13,8 +13,14 @@
                     }, 3000);
                 </script>
             @endif
-            <div>
+            <div class="flex justify-between">
                 <h2 class="text-2xl font-semibold leading-tight text-white">All Books</h2>
+                <div class="flex row text-center text-xs text-white font-extrabold">
+                    <a href={{ route('books.create') }} class="border rounded border-neutral-400 inline py-2 px-4">
+                        Add New Book</a>
+                    <a href="" class="ml-8 border rounded border-neutral-400 inline py-2 px-2">
+                        Add New Author</a>
+                </div>
             </div>
             <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
                 <div class="inline-block min-w-full shadow-md rounded-lg overflow-hidden">
@@ -24,8 +30,6 @@
                                 <th
                                     class="w-2/5 px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xl font-bold text-gray-700 uppercase tracking-wider">
                                     Book Title
-                                    <a href="" class="ml-8 text-sm text-green-500 font-extrabold animate-pulse">
-                                        Add New Book</a>
                                 </th>
                                 <th
                                     class="w-3/5 px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xl font-bold text-gray-700 uppercase tracking-wider">
