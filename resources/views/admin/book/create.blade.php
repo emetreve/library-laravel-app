@@ -37,7 +37,7 @@
             </div>
 
 
-            <div class="">
+            <div class="mb-4">
                 <label class="block mb-3 text-sm font-medium text-white">Select Authors</label>
                 @foreach ($authors as $author)
                     <label class="mt-2 mr-2">
@@ -53,6 +53,13 @@
                             <p class="text-red-500 text-xs">{{ $error }}</p>
                         @endforeach
                     @endif
+                </div>
+
+                <div class="flex">
+                    <p class="opacity-75 text-white">Did not find the author?</p>
+                    <a href="{{ route('authors.create', ['fromCreateBook' => 'true']) }}"
+                        class="ml-2 border text-xs text-blue-500 rounded border-grayMain inline py-1 px-1">
+                        Add New Author</a>
                 </div>
             </div>
 

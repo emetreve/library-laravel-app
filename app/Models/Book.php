@@ -16,4 +16,20 @@ class Book extends Model
     {
         return $this->belongsToMany(Author::class);
     }
+
+    public function scopeFilter($query, $filters)
+    {
+        if ($filters['search'] ?? null) {
+
+            $searchTerm = '%' . $filters['search'] . '%';
+
+            $query->where(function ($subquery) use ($searchTerm) {
+                $subquery->where('title', 'like', $searchTerm)
+                    ->orWhereHas('authors', function ($authorQuery) use ($searchTerm) {
+                        $authorQuery->where('name', 'like', $searchTerm);
+                    });
+            });
+        }
+        return $query;
+    }
 }

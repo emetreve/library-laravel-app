@@ -25,6 +25,15 @@
                         View All Authors</a>
                 </div>
             </div>
+
+            <div class="mt-3 border-gray-200 py-1">
+                <form method="GET" action="#">
+                    <input type="text" name="search" placeholder="Search Books by Title or Author Name..."
+                        class="border w-1/4 rounded-lg py-1 px-4 border-none focus:outline-none focus:ring-0 lg:bg-worldwidebg placeholder-gray-400 text-sm"
+                        value="{{ request('search') }}">
+                </form>
+            </div>
+
             <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
                 <div class="inline-block min-w-full shadow-md rounded-lg overflow-hidden">
                     <table class="min-w-full leading-normal">

@@ -25,6 +25,9 @@
             @if (request()->has('fromEditBook'))
                 <input type="hidden" name="fromEditBook" value="{{ request()->input('fromEditBook') }}">
             @endif
+            @if (request()->has('fromCreateBook'))
+                <input type="hidden" name="fromCreateBook" value="{{ request()->input('fromCreateBook') }}">
+            @endif
 
             <button type="submit"
                 class="w-full text-white bg-gray-900 hover:bg-customGray border border-gray-900 hover:border-gray-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center">

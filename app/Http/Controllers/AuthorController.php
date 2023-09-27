@@ -22,6 +22,8 @@ class AuthorController extends Controller
 
         if ($request->has('fromEditBook')) {
             return redirect(route('books.edit', ["book"=> $request->input('fromEditBook')]));
+        } else if ($request->has('fromCreateBook')) {
+            return redirect(route('books.create'));
         }
 
 		return redirect(route('authors.index'))->with('success', "Author created successfully!");
