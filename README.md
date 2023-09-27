@@ -30,7 +30,7 @@ composer install
 npm install
 ```
 
-And finally, do not forget to run the following command in order to build resources (for Tailwind):
+4\. And finally, do not forget to run the following command in order to build resources (for Tailwind):
 
 ```sh
 npm run dev
