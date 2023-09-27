@@ -23,8 +23,8 @@ class Book extends Model
 
             $searchTerm = '%' . $filters['search'] . '%';
 
-            $query->where(function ($subquery) use ($searchTerm) {
-                $subquery->where('title', 'like', $searchTerm)
+            $query->where(function ($subQuery) use ($searchTerm) {
+                $subQuery->where('title', 'like', $searchTerm)
                     ->orWhereHas('authors', function ($authorQuery) use ($searchTerm) {
                         $authorQuery->where('name', 'like', $searchTerm);
                     });
