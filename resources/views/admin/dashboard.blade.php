@@ -69,10 +69,13 @@
                                                 <p class="break-all mr-1 text-gray-500">Year:</p>
                                                 <p class="break-all">{{ $book->year }}</p>
                                             </div>
-                                            <p
-                                                class="{{ $book->status ? 'text-green-500' : 'text-red-400' }} break-all text-xs font-bold border rounded-xl inline py-1 px-2">
-                                                {{ $book->status ? 'available' : 'taken' }}
-                                            </p>
+                                            <div class="flex">
+                                                <p class="break-all mr-1 text-gray-500">Status:</p>
+                                                <p
+                                                    class="{{ $book->status ? 'text-green-500' : 'text-red-400' }} break-all text-xs font-bold border rounded-xl inline py-1 px-2">
+                                                    {{ $book->status ? 'available' : 'taken' }}
+                                                </p>
+                                            </div>
                                         </div>
                                     </td>
                                 </tr>
