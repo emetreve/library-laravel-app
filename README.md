@@ -10,7 +10,7 @@
 
 #
 
-### Getting Started
+## Getting Started
 
 1\. Clone Library repository:
 
@@ -38,7 +38,7 @@ npm run dev
 
 #
 
-### Migration and Seeding Database
+## Migration and Seeding Database
 
 Migrate and seed the database:
 
@@ -46,7 +46,7 @@ Migrate and seed the database:
 php artisan migrate --seed
 ```
 
-### Development
+## Development
 
 Run development server by executing:
 
