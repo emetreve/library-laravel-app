@@ -13,7 +13,13 @@
                     }, 3000);
                 </script>
             @endif
-            <div class="flex justify-between">
+            <p onclick="document.querySelector('#logout').submit()"
+                class="absolute hover:cursor-pointer top-5 mx-auto border rounded text-white border-neutral-400 inline py-1 px-2">
+                Log out</p>
+            <form class="hidden" method="POST" action="{{ route('logout') }}" novalidate id="logout">
+                @csrf
+            </form>
+            <div class="flex justify-between mt-4">
                 <h2 class="text-2xl font-semibold leading-tight text-white">All Books</h2>
                 <div class="flex row text-center text-xs text-white font-extrabold">
                     <a href={{ route('books.create') }} class="border rounded border-neutral-400 inline py-2 px-4">
@@ -21,7 +27,8 @@
                     <a href={{ route('authors.create') }}
                         class="ml-8 border rounded border-neutral-400 inline py-2 px-2">
                         Add New Author</a>
-                    <a href={{ route('authors.index') }} class="ml-8 border rounded border-neutral-400 inline py-2 px-2">
+                    <a href={{ route('authors.index') }}
+                        class="ml-8 border rounded border-neutral-400 inline py-2 px-2">
                         View All Authors</a>
                 </div>
             </div>

@@ -23,6 +23,7 @@ Route::view('/signup', 'auth.signup')->middleware('guest')->name('signup.index')
 Route::controller(AuthController::class)->group(function () {
 	Route::post('/signup', 'signup')->middleware('guest')->name('signup');
     Route::post('/', 'login')->middleware('guest')->name('login');
+	Route::post('/logout', 'logout')->middleware('auth')->name('logout');
 });
 
 Route::get('/dashboard', DashboardController::class)->middleware('auth')->name('dashboard');

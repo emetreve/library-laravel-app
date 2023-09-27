@@ -6,7 +6,6 @@ use App\Http\Requests\LoginUserRequest;
 use App\Http\Requests\SignupUserRequest;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Validation\ValidationException;
 
 
 class AuthController extends Controller
@@ -32,4 +31,10 @@ class AuthController extends Controller
 
 		return back()->withInput()->withErrors(['email' => "Wrong credentials."]);
     }
+
+    public function logout(): RedirectResponse
+	{
+		auth()->logout();
+		return redirect(route('login.index'));
+	}
 }
