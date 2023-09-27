@@ -8,8 +8,6 @@
 -   [Migration and Seeding Database](#migration)
 -   [Development](#development)
 
-#
-
 ## Getting Started
 
 1\. Clone Library repository:
