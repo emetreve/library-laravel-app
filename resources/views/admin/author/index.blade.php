@@ -9,7 +9,7 @@
             <div>
                 <a href={{ route('authors.create') }} class="border rounded border-neutral-400 py-1 px-2">
                     Add new</a>
-                <a href={{ route('dashboard') }} class="border rounded opacity-60 border-neutral-400 py-1 px-2">
+                <a href={{ route('dashboard') }} class="border rounded opacity-80 border-neutral-400 py-1 px-2">
                     Back to Dashboard</a>
             </div>
         </div>

@@ -38,7 +38,7 @@
 
 
             <div class="">
-                <label class="block mb-2 text-sm font-medium text-white">Authors</label>
+                <label class="block mb-3 text-sm font-medium text-white">Select Authors</label>
                 @foreach ($authors as $author)
                     <label class="mt-2 mr-2">
                         <input type="checkbox" name="authors[]" value="{{ $author->id }}"
@@ -59,7 +59,7 @@
 
             <div class="relative mb-5">
                 <label class="mb-2 text-sm font-medium text-white mr-2 mt-2 inline relative bottom-[0.2rem]"
-                    for="status">Availability</label>
+                    for="status">Availability status</label>
                 <input class="w-4 h-4 rounded border-gray-200" type="checkbox" name="status" id="status">
             </div>
 
