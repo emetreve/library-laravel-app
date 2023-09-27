@@ -17,7 +17,7 @@ class UpdateBookRequest extends FormRequest
 
         return [
             'title' => 'required|min:3|unique:books,title,' . $book->id,
-            'year' => 'required',
+            'year' => 'required|integer',
             'authors' => 'required',
             'status' => 'boolean|nullable',
         ];
