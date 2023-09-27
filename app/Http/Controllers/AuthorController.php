@@ -20,6 +20,10 @@ class AuthorController extends Controller
 
         Author::create($attributes);
 
+        if ($request->has('fromEditBook')) {
+            return redirect(route('books.edit', ["book"=> $request->input('fromEditBook')]));
+        }
+
 		return redirect(route('authors.index'))->with('success', "Author created successfully!");
     }
 }

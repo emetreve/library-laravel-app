@@ -32,7 +32,7 @@
                             <tr>
                                 <th
                                     class="w-2/5 px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xl font-bold text-gray-700 uppercase tracking-wider">
-                                    Book Title
+                                    Book
                                 </th>
                                 <th
                                     class="w-3/5 px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xl font-bold text-gray-700 uppercase tracking-wider">
@@ -48,7 +48,8 @@
                                             {{ $book->title }}
                                         </p>
                                         <div class="mt-2">
-                                            <a href="" class="text-blue-500">Edit</a>
+                                            <a href="{{ route('books.edit', $book->id) }}"
+                                                class="text-blue-500">Edit</a>
                                             <form method="POST" class="inline" novalidate
                                                 action="{{ route('books.destroy', $book->id) }}">
                                                 @csrf
