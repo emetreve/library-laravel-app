@@ -8,12 +8,18 @@ use Illuminate\Http\RedirectResponse;
 
 class AuthorController extends Controller
 {
-    public function __invoke(StoreAuthorRequest $request): RedirectResponse
+    public function index () {
+        return view('admin.author.index', [
+			'authors'  => Author::latest()->get(),
+		]);
+    }
+
+    public function store (StoreAuthorRequest $request): RedirectResponse
     {
         $attributes = $request->validated();
 
         Author::create($attributes);
 
-		return redirect(route('dashboard'))->with('success', "Author created successfully!");
+		return redirect(route('authors.index'))->with('success', "Author created successfully!");
     }
 }

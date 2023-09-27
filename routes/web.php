@@ -28,12 +28,13 @@ Route::controller(AuthController::class)->group(function () {
 Route::get('/dashboard', DashboardController::class)->middleware('auth')->name('dashboard');
 
 Route::group(['controller' => BookController::class, 'middleware' => 'auth', 'prefix' => 'dashboard'], function () {
-	Route::delete('{book}', 'destroy')->name('books.destroy');
     Route::get('create', 'create')->name('books.create');
     Route::post('', 'store')->name('books.store');
+    Route::delete('{book}', 'destroy')->name('books.destroy');
 });
 
-Route::prefix('/dashboard/add-author')->middleware(['auth'])->group(function () {
-    Route::view('/', 'admin.author.create')->name('authors.create');
-    Route::post('/', AuthorController::class)->name('authors.store');
+Route::prefix('/dashboard/authors')->middleware(['auth'])->group(function () {
+    Route::get('/', [AuthorController::class, "index"])->name('authors.index');
+    Route::view('/create', 'admin.author.create')->name('authors.create');
+    Route::post('/store', [AuthorController::class, "store"])->name('authors.store');
 });

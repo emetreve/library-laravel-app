@@ -21,6 +21,8 @@
                     <a href={{ route('authors.create') }}
                         class="ml-8 border rounded border-neutral-400 inline py-2 px-2">
                         Add New Author</a>
+                    <a href={{ route('authors.index') }} class="ml-8 border rounded border-neutral-400 inline py-2 px-2">
+                        View All Authors</a>
                 </div>
             </div>
             <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
