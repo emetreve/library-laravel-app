@@ -29,7 +29,7 @@ class BookController extends Controller
 	{
 		$attributes = $request->validated();
 
-		$book = Book::create($attributes);
+        $book = Book::create($attributes);
 
         $authors = $request->input('authors');
 

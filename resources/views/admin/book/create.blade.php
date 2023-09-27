@@ -4,8 +4,7 @@
         Add new book
     </h1>
 
-    <form method="POST" action="{{ route('books.store') }}" novalidate enctype="multipart/form-data"
-        class="space-y-4 md:space-y-6">
+    <form method="POST" action="{{ route('books.store') }}" novalidate class="space-y-4 md:space-y-6">
         @csrf
         <div>
 

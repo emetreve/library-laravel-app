@@ -18,7 +18,8 @@
                 <div class="flex row text-center text-xs text-white font-extrabold">
                     <a href={{ route('books.create') }} class="border rounded border-neutral-400 inline py-2 px-4">
                         Add New Book</a>
-                    <a href="" class="ml-8 border rounded border-neutral-400 inline py-2 px-2">
+                    <a href={{ route('authors.create') }}
+                        class="ml-8 border rounded border-neutral-400 inline py-2 px-2">
                         Add New Author</a>
                 </div>
             </div>

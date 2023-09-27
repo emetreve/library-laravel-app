@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,4 +31,9 @@ Route::group(['controller' => BookController::class, 'middleware' => 'auth', 'pr
 	Route::delete('{book}', 'destroy')->name('books.destroy');
     Route::get('create', 'create')->name('books.create');
     Route::post('', 'store')->name('books.store');
+});
+
+Route::prefix('/dashboard/add-author')->middleware(['auth'])->group(function () {
+    Route::view('/', 'admin.author.create')->name('authors.create');
+    Route::post('/', AuthorController::class)->name('authors.store');
 });
