@@ -16,7 +16,7 @@
 git clone https://github.com/emetreve/library-laravel-app.git
 ```
 
-2\. Run _composer install_ in order to install all the dependencies.
+2\. Install all the dependencies:
 
 ```sh
 composer install
@@ -28,13 +28,23 @@ composer install
 npm install
 ```
 
-4\. And finally, do not forget to run the following command in order to build resources (for Tailwind):
+4\. Do not forget to run the following command in order to build resources (for Tailwind):
 
 ```sh
 npm run dev
 ```
 
-#
+5\. Copy .env.example:
+
+```sh
+cp .env.example .env
+```
+
+6\. Run key:generate command:
+
+```sh
+php artisan key:generate
+```
 
 ## Migration and Seeding Database
 
